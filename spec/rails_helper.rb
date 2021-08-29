@@ -1,7 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'capybara/poltergeist'
-require 'factory_girl_rails'
+require 'factory_bot'
 require 'capybara/rspec'
 
 ENV['RAILS_ENV'] ||= 'test'
@@ -86,8 +86,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   # added:
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :feature
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma
 end
