@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    get 'signup', to 'devise/registrations#new'
+    get 'signup', to: 'devise/registrations#new'
   end
 
   root to: 'pages#index'

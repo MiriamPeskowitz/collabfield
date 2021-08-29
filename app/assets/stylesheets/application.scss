@@ -21,6 +21,9 @@
 //Defaults styles
 @import "base/default";
 
+//media queries for responsive design
+@import "responsive/*";
+
 //partials -- main css files
 @import "partials/*";
 @import "partials/layout/*";
