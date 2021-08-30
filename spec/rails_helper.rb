@@ -1,13 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'capybara/poltergeist'
-require 'factory_bot'
-require 'capybara/rspec'
-
 ENV['RAILS_ENV'] ||= 'test'
-
 require File.expand_path('../config/environment', __dir__)
-
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
@@ -86,6 +80,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   # added:
+  require 'capybara/poltergeist'
+  require 'factory_bot_rails'
+  require 'capybara/rspec'
+
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryBot::Syntax::Methods
